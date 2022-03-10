@@ -123,12 +123,6 @@ class _OnBoardingState extends State<OnBoarding> {
                         }
                       ), 
                     ),
-                      // child: ContainerButton(
-                      // text: _currentPageValue == 4 ? 'Continuar' : 'Siguiente',
-                      // colorText: _currentPageValue == 4 ? Colors.white : const Color(0XFF757575),
-                      // backgroundColor: _currentPageValue == 4 ? const Color(0xFF76a757): Colors.white,
-                      // borderColor:  _currentPageValue == 4 ? Colors.transparent : const Color(0XFF757575),
-                      // ),
                     ),
                   ],
                 ),
