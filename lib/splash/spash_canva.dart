@@ -17,12 +17,19 @@ class SplashCanvas extends CustomPainter {
     final path = Path();
     final path_2 = Path();
 
-    path.lineTo(0, size.height * 0.07);
-    path.quadraticBezierTo(size.width * 0.35, size.height * 0.20, size.width * 0.5, 0);
-    path.quadraticBezierTo(size.width * 0.1, size.height * 0.1, size.width * 0.95, size.height * 0.1);
+    // path.lineTo(0, size.height * 0.07);
+    // path.quadraticBezierTo(size.width * 0.35, size.height * 0.20, size.width * 0.5, 0);
+    // path.quadraticBezierTo(size.width * 0.1, size.height * 0.1, size.width * 0.95, size.height * 0.1);
+    // path.lineTo(size.width, size.height * 0.08);
+    // path.lineTo(size.width, 0);
+    
+
+    path.lineTo(0, size.height * 0.1);
+    path.quadraticBezierTo(size.width * 0.15, size.height * 0.18,size.width * 0.35, size.height * 0.13);
+    path.quadraticBezierTo(size.width * 0.55, size.height * 0.07,size.width * 0.8, size.height * 0.1);
+    path.quadraticBezierTo(size.width * 0.98, size.height * 0.13, size.width, size.height * 0.12);
     path.lineTo(size.width, size.height * 0.08);
     path.lineTo(size.width, 0);
-
     canvas.drawPath(path, paint);
 
     path_2.lineTo(0, size.height);

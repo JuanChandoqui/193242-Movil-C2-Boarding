@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvp_all/pages/login_screen.dart';
 import 'package:mvp_all/splash/splas_view.dart';
 
 void main() {
@@ -17,7 +18,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SplashView(),
+
+      initialRoute: 'home',
+
+      routes: {
+        'register': (context) => const LoginScreen(),
+        'home':(context) => const SplashView()
+      },
     );
   }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../widgets/container_Button.dart';
 import '../widgets/container_boarding.dart';
+
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({Key? key}) : super(key: key);
@@ -107,10 +106,15 @@ class _OnBoardingState extends State<OnBoarding> {
                           primary:  _currentPageValue == 4 ? const Color(0xFF76a757): Colors.white,
                           onPrimary: _currentPageValue == 4 ? Colors.white : const Color(0XFF757575),
                         ),
-                        onPressed: () {
+                        onPressed: () {             
                           setState(() {
                             
                           });
+
+                          if(_currentPageValue == 4){
+                            Navigator.pushNamed(context, 'register');
+                          }
+
                           if(_currentPageValue < boardingData.length-1){
                             _currentPageValue += 1;
                             _pageController.animateToPage(
