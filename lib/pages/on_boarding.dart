@@ -112,7 +112,7 @@ class _OnBoardingState extends State<OnBoarding> {
                           });
 
                           if(_currentPageValue == 4){
-                            Navigator.pushNamed(context, 'register');
+                            Navigator.pushNamed(context, 'homeview');
                           }
 
                           if(_currentPageValue < boardingData.length-1){
