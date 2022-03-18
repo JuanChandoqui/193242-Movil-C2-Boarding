@@ -11,12 +11,12 @@ class TextButtonsUsers extends StatelessWidget {
       children: [
         SizedBox(height: 30, child: textButtonUser('Entrar como invitado',const Color(0XFFFC1660))),
         SizedBox(height: 30, child: textButtonUser('Entrar como vendedor',const Color(0XFF7BA95E))),
-        textButtonLogin()
+        textButtonLogin(context)
       ],
     );
   }
 
-  Row textButtonLogin() {
+  Row textButtonLogin(BuildContext context) {
     return Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -29,7 +29,8 @@ class TextButtonsUsers extends StatelessWidget {
           ),
 
           TextButton(
-            onPressed: () => {}, 
+            onPressed: () => Navigator.pushNamed(context, 'login'),
+
             child: const Text(
               'Iniciar sesión', 
               style: TextStyle(

@@ -10,16 +10,16 @@ class ButtonsRegister extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        elevatedButton(FontAwesomeIcons.google, 'Continuar con Google', const Color(0XFF3169f5), Colors.white, Colors.transparent),
+        elevatedButton(context, FontAwesomeIcons.google, 'Continuar con Google', const Color(0XFF3169f5), Colors.white, Colors.transparent),
         const SizedBox(height: 30),
-        elevatedButton(Icons.facebook, 'Continuar con Facebook', const Color(0xFF324fa5), Colors.white, Colors.transparent),
+        elevatedButton(context, Icons.facebook, 'Continuar con Facebook', const Color(0xFF324fa5), Colors.white, Colors.transparent),
         const SizedBox(height: 50),
-        elevatedButton(Icons.email, 'Registrarse con e-mail', Colors.white, const Color(0XFF64686f), const Color(0XFF64686f))
+        elevatedButton(context, Icons.email, 'Registrarse con e-mail', Colors.white, const Color(0XFF64686f), const Color(0XFF64686f))
       ],
     );
   }
 
-  ElevatedButton elevatedButton(IconData icondata, String text, Color colorBackground, Color colorText, Color borderColor) {
+  ElevatedButton elevatedButton(BuildContext context, IconData icondata, String text, Color colorBackground, Color colorText, Color borderColor) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
           elevation: 0,
@@ -29,7 +29,11 @@ class ButtonsRegister extends StatelessWidget {
           ),
           primary: colorBackground,
         ),
-        onPressed: () => {}, 
+        onPressed: () => {
+          if(text == 'Registrarse con e-mail'){
+            Navigator.pushNamed(context, 'register')
+          }
+        }, 
         child: SizedBox(
           width: 300,
           height: 48,

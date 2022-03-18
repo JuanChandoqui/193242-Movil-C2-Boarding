@@ -7,17 +7,17 @@ import '../widgets/custom_button_app.dart';
 import '../widgets/text_form_field_custom.dart';
 import '../widgets/text_form_field_password.dart';
 
-class LoginScreen extends StatelessWidget {
+class ReclamePasswordScreen extends StatelessWidget {
    
-  const LoginScreen({Key? key}) : super(key: key);
+  const ReclamePasswordScreen({Key? key}) : super(key: key);
   
   @override
   Widget build(BuildContext context) {
-
+    
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: appBarCustom('Iniciar Sesión'),
+      appBar: appBarCustom('Recuperar contraseña'),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: size.width * 0.07),
@@ -28,7 +28,7 @@ class LoginScreen extends StatelessWidget {
                 flex: 2,
                 child:  Center(
                   child: Text(
-                    'Inicia sesión con tu cuenta para continuar',
+                    'Ingresa tu email para reestablecer tu contraseña',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF757575),
@@ -41,20 +41,12 @@ class LoginScreen extends StatelessWidget {
                 child: Form(
                   child: SingleChildScrollView(
                     child: Column(
-                      children: [
-                          
-                        const TextFormFieldCustom(
+                      children: const [                    
+                        TextFormFieldCustom(
                           label: 'Correo Electrónico', 
                           hintText: 'Dirección de correo',
-                          helpTextEnabled: false,
-                        ),
-                      
-                        SizedBox(height: size.height * 0.03),
-                      
-                        const TextFormFieldPasswordScreen(
-                          helpTextEnabled: false,
-                          showHelpPassword: true,
-                        ),                       
+                          helpTextEnabled: true,
+                        ),                    
                       ],
                     ),
                   ),
@@ -68,14 +60,11 @@ class LoginScreen extends StatelessWidget {
           
               Expanded(
                 flex: 1,
-                child: CustomButtonApp(size: size, textButton: 'Ingresar'),
+                child: CustomButtonApp(size: size, textButton: 'Enviar Solicitud'),
               ),
               const Expanded(
                 flex: 1,
-                child: BottomButtonCustom(
-                  text: '¿Todavía no tienes una cuenta? ',
-                  textButton: 'Regístrate',
-                ),
+                child: SizedBox()
               )
             ],
           ),

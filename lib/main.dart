@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:mvp_all/pages/login_screen.dart';
+
+import 'package:mvp_all/pages/home_screen.dart';
 import 'package:mvp_all/pages/progress_view.dart';
+import 'package:mvp_all/pages/reclame_password_screen.dart';
 import 'package:mvp_all/splash/splas_view.dart';
+import 'pages/login_screen.dart';
+import 'pages/register_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,12 +24,15 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
 
-      initialRoute: 'progress',
+      initialRoute: 'homeview',
 
       routes: {
-        'register': (context) => const LoginScreen(),
+        'homeview': (context) => const HomeScreen(),
         'home':(context) => const SplashView(),
-        'progress':(context) => ProgressView()
+        'progress':(context) => const ProgressView(),
+        'login':(context) => const LoginScreen(),
+        'register': (context) => const RegisterScreenScreen(),
+        'reclame_password':(context) => const ReclamePasswordScreen(),
       },
     );
   }
