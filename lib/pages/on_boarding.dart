@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvp_all/styles/Colors/ColorsView.dart';
 import '../widgets/container_boarding.dart';
 
 
@@ -99,12 +100,12 @@ class _OnBoardingState extends State<OnBoarding> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                             side: BorderSide(
-                              color: _currentPageValue == 4 ? Colors.transparent : const Color(0XFF757575),
+                              color: _currentPageValue == 4 ? Colors.transparent : ColorsViews.textCenterColor,
                             )
                           ),
                           elevation: 1,
-                          primary:  _currentPageValue == 4 ? const Color(0xFF76a757): Colors.white,
-                          onPrimary: _currentPageValue == 4 ? Colors.white : const Color(0XFF757575),
+                          primary:  _currentPageValue == 4 ? ColorsViews.buttonMainColor: ColorsViews.colorWhiteGeneral,
+                          onPrimary: _currentPageValue == 4 ? ColorsViews.colorWhiteGeneral : ColorsViews.textCenterColor,
                         ),
                         onPressed: () {             
                           setState(() {
@@ -144,12 +145,13 @@ class _OnBoardingState extends State<OnBoarding> {
 
   createBarProgression({required bool showIndicator}){
     return AnimatedContainer(
+
       duration: const Duration(milliseconds: 200),
-      margin: const EdgeInsets.only(right: 4),
-      height: 7,
-      width: showIndicator ? 20 : 15,
+      margin: const EdgeInsets.only(right: 9),
+      height:5,
+      width: showIndicator ? 24 : 14,
       decoration: BoxDecoration(
-        color: showIndicator ? const Color(0xFFfc1460) : const Color(0xFFe0e0e0),
+        color: showIndicator ? ColorsViews.textPink : ColorsViews.colorGray,
         borderRadius: BorderRadius.circular(10)
       ),
     );

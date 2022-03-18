@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvp_all/styles/Colors/ColorsView.dart';
 
 class TextButtonsUsers extends StatelessWidget {
   const TextButtonsUsers({
@@ -9,8 +10,8 @@ class TextButtonsUsers extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 30, child: textButtonUser('Entrar como invitado',const Color(0XFFFC1660))),
-        SizedBox(height: 30, child: textButtonUser('Entrar como vendedor',const Color(0XFF7BA95E))),
+        SizedBox(height: 30, child: textButtonUser('Entrar como invitado',ColorsViews.textPink)),
+        SizedBox(height: 30, child: textButtonUser('Entrar como vendedor', ColorsViews.buttonMainColor)),
         textButtonLogin(context)
       ],
     );
@@ -23,7 +24,7 @@ class TextButtonsUsers extends StatelessWidget {
           const Text(
             '¿Ya tienes una cuenta?', 
             style: TextStyle(
-              color: Color(0XFF5A5E66),
+              color: ColorsViews.textCenterColor,
               fontSize: 13
             )
           ),
@@ -34,7 +35,7 @@ class TextButtonsUsers extends StatelessWidget {
             child: const Text(
               'Iniciar sesión', 
               style: TextStyle(
-                color: Color(0XFFFC1660),
+                color: ColorsViews.textPink,
                 fontSize: 13
               ),
             )

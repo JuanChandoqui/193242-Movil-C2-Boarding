@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvp_all/styles/Colors/ColorsView.dart';
 
 class ContainerBoarding extends StatelessWidget {
   final String image;
@@ -26,7 +27,7 @@ class ContainerBoarding extends StatelessWidget {
         Text(
           title, 
           style: const TextStyle(
-            color: Color(0xFF4f1581),
+            color: ColorsViews.textBoarding,
             fontWeight: FontWeight.bold,
             fontSize: 18,
           ),
@@ -40,7 +41,7 @@ class ContainerBoarding extends StatelessWidget {
             description,
             textAlign: TextAlign.center,
             style: const TextStyle(
-              color: Color(0xFF757575)
+              color: ColorsViews.textCenterColor
             ),
           ),
         ),

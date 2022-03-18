@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvp_all/styles/Colors/ColorsView.dart';
 import 'package:mvp_all/widgets/bottom_button_custom.dart';
 
 import '../widgets/appbar_custom.dart';
@@ -30,7 +31,7 @@ class RegisterScreenScreen extends StatelessWidget {
                     'Crea una cuenta para empezar a usar la app',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF757575),
+                      color: ColorsViews.textCenterColor,
                     ),
                   )
                 )

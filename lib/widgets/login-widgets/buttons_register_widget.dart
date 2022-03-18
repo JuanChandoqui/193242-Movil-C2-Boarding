@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mvp_all/styles/Colors/ColorsView.dart';
 
 class ButtonsRegister extends StatelessWidget {
   const ButtonsRegister({
@@ -10,11 +11,11 @@ class ButtonsRegister extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        elevatedButton(context, FontAwesomeIcons.google, 'Continuar con Google', const Color(0XFF3169f5), Colors.white, Colors.transparent),
+        elevatedButton(context, FontAwesomeIcons.google, 'Continuar con Google', const Color(0XFF3169f5), ColorsViews.colorWhiteGeneral, Colors.transparent),
         const SizedBox(height: 30),
-        elevatedButton(context, Icons.facebook, 'Continuar con Facebook', const Color(0xFF324fa5), Colors.white, Colors.transparent),
+        elevatedButton(context, Icons.facebook, 'Continuar con Facebook', const Color(0xFF324fa5), ColorsViews.colorWhiteGeneral, Colors.transparent),
         const SizedBox(height: 50),
-        elevatedButton(context, Icons.email, 'Registrarse con e-mail', Colors.white, const Color(0XFF64686f), const Color(0XFF64686f))
+        elevatedButton(context, Icons.email, 'Registrarse con e-mail', ColorsViews.colorWhiteGeneral, ColorsViews.textCenterColor, ColorsViews.textCenterColor)
       ],
     );
   }

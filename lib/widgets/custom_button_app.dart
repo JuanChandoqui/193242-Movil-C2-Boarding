@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvp_all/styles/Colors/ColorsView.dart';
 
 class CustomButtonApp extends StatelessWidget {
 
@@ -26,7 +27,7 @@ class CustomButtonApp extends StatelessWidget {
           ),
         ),
         style: ElevatedButton.styleFrom(
-          primary: const Color(0xFF76A757),
+          primary: ColorsViews.buttonMainColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           )

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../styles/Colors/ColorsView.dart';
+
 class BottomButtonCustom extends StatelessWidget {
 
   final String text;
@@ -21,7 +23,7 @@ class BottomButtonCustom extends StatelessWidget {
             child: Text(
               textButton,
               style: const TextStyle(
-                color: Color(0xFFFC1460),
+                color: ColorsViews.textPink,
                 fontWeight: FontWeight.bold
               ),
             ),

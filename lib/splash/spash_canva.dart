@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
+import 'package:mvp_all/styles/Colors/ColorsView.dart';
+
 class SplashCanvas extends CustomPainter {
 
   final ui.Image? image_canvas;
@@ -11,7 +13,7 @@ class SplashCanvas extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final paint = Paint();
 
-    paint.color = const Color(0xFF76AB56);
+    paint.color = ColorsViews.colorSplash;
     paint.style = PaintingStyle.fill;
 
     final path = Path();

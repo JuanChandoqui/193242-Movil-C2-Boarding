@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvp_all/styles/Colors/ColorsView.dart';
 
 class TextFormFieldCustom extends StatelessWidget {
   final String label;
@@ -20,7 +21,7 @@ class TextFormFieldCustom extends StatelessWidget {
     String labelHelpText = 'Ingrese su correo eléctronico registrado y le enviaremos un correo electrónico que contiene un enlace para restablecer su contraseña.';
 
     var outlineInputBorder = OutlineInputBorder(
-      borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
+      borderSide: const BorderSide(color: ColorsViews.colorWhiteGeneral),
       borderRadius: BorderRadius.circular(15),
     );
 

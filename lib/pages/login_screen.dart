@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mvp_all/styles/Colors/ColorsView.dart';
 
 import '../widgets/appbar_custom.dart';
 import '../widgets/bottom_button_custom.dart';
-import '../widgets/checkbox_condition.dart';
 import '../widgets/custom_button_app.dart';
 import '../widgets/text_form_field_custom.dart';
 import '../widgets/text_form_field_password.dart';
@@ -31,7 +31,7 @@ class LoginScreen extends StatelessWidget {
                     'Inicia sesión con tu cuenta para continuar',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF757575),
+                      color: ColorsViews.textCenterColor,
                     ),
                   )
                 )

@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:mvp_all/styles/Colors/ColorsView.dart';
 
 class CheckBoxScreen extends StatefulWidget {
    
@@ -26,7 +27,7 @@ class _CheckBoxScreenState extends State<CheckBoxScreen> {
       if (states.any(interactiveStates.contains)) {
         return Colors.blue;
       }
-      return const Color(0xFF898989);
+      return ColorsViews.textCenterColor;
     }
 
     return Row(
@@ -71,7 +72,7 @@ class ConditionText extends StatelessWidget {
         TextSpan(
           text:  'términos y condiciones ',
           style: const TextStyle(
-            color: Color(0xFFFC1460)
+            color: ColorsViews.textPink
           ),
           recognizer: TapGestureRecognizer()
           ..onTap = () => print('termino y condiciones')
@@ -87,7 +88,7 @@ class ConditionText extends StatelessWidget {
          TextSpan(
           text:  'política de privacidad',
           style: const TextStyle(
-            color: Color(0xFFFC1460)
+            color: ColorsViews.textPink
           ),
           recognizer: TapGestureRecognizer()
           ..onTap = () => print('politica de privacidad'),

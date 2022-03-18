@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvp_all/styles/Colors/ColorsView.dart';
 
 class TextFormFieldPasswordScreen extends StatefulWidget {
 
@@ -30,7 +31,7 @@ class _TextFormFieldPasswordScreenState extends State<TextFormFieldPasswordScree
     final size = MediaQuery.of(context).size;
 
     var outlineInputBorder = OutlineInputBorder(
-      borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
+      borderSide: const BorderSide(color: ColorsViews.colorGray),
       borderRadius: BorderRadius.circular(15),
     );
 
@@ -55,7 +56,7 @@ class _TextFormFieldPasswordScreenState extends State<TextFormFieldPasswordScree
             suffixIcon:  IconButton(
               icon: Icon(
                 Icons.visibility,
-                color: _passwordVisible ? Colors.blue :const Color(0xFF898989),
+                color: _passwordVisible ? Colors.blue : ColorsViews.textCenterColor,
               ),
               onPressed: (){
                 _passwordVisible = !_passwordVisible;
@@ -82,7 +83,7 @@ class _TextFormFieldPasswordScreenState extends State<TextFormFieldPasswordScree
               child: const Text(
                 '¿Has olvidado tu contraseña?',
                 style: TextStyle(
-                  color: Color(0xFFFC1460),
+                  color: ColorsViews.textPink,
                   fontWeight: FontWeight.bold
                 ),
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvp_all/styles/Colors/ColorsView.dart';
 
 class IconWidget extends StatelessWidget {
   const IconWidget({
@@ -13,11 +14,11 @@ class IconWidget extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children:  [
-            const Text('ALL FOR', style: TextStyle(fontSize: 40, color: Color(0XFF5A5E66)),),         
+            const Text('ALL FOR', style: TextStyle(fontSize: 40, color: ColorsViews.textCenterColor),),         
             Row(
               children: const [
-                Text('MY ', style: TextStyle(fontSize: 60, color: Color(0XFF5A5E66), fontWeight: FontWeight.bold)),
-                Text('PET', style: TextStyle(fontSize: 60, color: Color(0XFFFC1660),  fontWeight: FontWeight.bold))
+                Text('MY ', style: TextStyle(fontSize: 60, color: ColorsViews.textCenterColor, fontWeight: FontWeight.bold)),
+                Text('PET', style: TextStyle(fontSize: 60, color: ColorsViews.textPink,  fontWeight: FontWeight.bold))
               ],
             )
             
