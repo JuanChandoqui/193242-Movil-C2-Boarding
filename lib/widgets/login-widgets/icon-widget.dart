@@ -23,7 +23,7 @@ class IconWidget extends StatelessWidget {
             
           ],
         ),
-        Padding(padding: EdgeInsets.zero),
+        const Padding(padding: EdgeInsets.zero),
         const Image(image: AssetImage('assets/image/icon-Pet.png'), height: 110, width: 120,)
       ],
     );

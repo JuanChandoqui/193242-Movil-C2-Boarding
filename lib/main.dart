@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mvp_all/pages/login_screen.dart';
+import 'package:mvp_all/pages/progress_view.dart';
 import 'package:mvp_all/splash/splas_view.dart';
 
 void main() {
@@ -19,11 +20,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
 
-      initialRoute: 'home',
+      initialRoute: 'progress',
 
       routes: {
         'register': (context) => const LoginScreen(),
-        'home':(context) => const SplashView()
+        'home':(context) => const SplashView(),
+        'progress':(context) => ProgressView()
       },
     );
   }
