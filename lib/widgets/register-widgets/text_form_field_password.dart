@@ -5,11 +5,13 @@ class TextFormFieldPasswordScreen extends StatefulWidget {
 
   final bool helpTextEnabled;
   final bool showHelpPassword;
+  final TextEditingController controller;
    
   const TextFormFieldPasswordScreen({
     Key? key, 
     required this.helpTextEnabled, 
-    required this.showHelpPassword
+    required this.showHelpPassword,
+    required this.controller,
   }) : super(key: key);
 
   @override
@@ -19,7 +21,6 @@ class TextFormFieldPasswordScreen extends StatefulWidget {
 class _TextFormFieldPasswordScreenState extends State<TextFormFieldPasswordScreen> {
 
   late bool _passwordVisible;
-  final TextEditingController _userPasswordController = TextEditingController();
 
   @override
   void initState() {
@@ -37,7 +38,6 @@ class _TextFormFieldPasswordScreenState extends State<TextFormFieldPasswordScree
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      // mainAxisAlignment: MainAxisAlignment.end,
       children: [
         const Text(
           'Password',
@@ -50,8 +50,12 @@ class _TextFormFieldPasswordScreenState extends State<TextFormFieldPasswordScree
         const SizedBox(height: 5,), 
 
         TextFormField(
-          controller: _userPasswordController,
+          controller: widget.controller,
           obscureText: !_passwordVisible,
+          onChanged: (text){
+            // widget.controller.text = text;
+            print(text);
+          },
           decoration:  InputDecoration(
             suffixIcon:  IconButton(
               icon: Icon(

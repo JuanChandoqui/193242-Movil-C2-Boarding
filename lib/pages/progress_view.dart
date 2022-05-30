@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:mvp_all/widgets/progress_custom.dart';
+import 'package:mvp_all/widgets/customs-widgets/progress_custom.dart';
 
 class ProgressView extends StatefulWidget {
   const ProgressView({Key? key}) : super(key: key);

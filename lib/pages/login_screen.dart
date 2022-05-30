@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:mvp_all/styles/Colors/ColorsView.dart';
 
-import '../widgets/appbar_custom.dart';
-import '../widgets/bottom_button_custom.dart';
+import '../widgets/customs-widgets/appbar_custom.dart';
+import '../widgets/customs-widgets/bottom_button_custom.dart';
 import '../widgets/custom_button_app.dart';
-import '../widgets/text_form_field_custom.dart';
-import '../widgets/text_form_field_password.dart';
+import '../widgets/customs-widgets/text_form_field_custom.dart';
+import '../widgets/register-widgets/text_form_field_password.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
    
   const LoginScreen({Key? key}) : super(key: key);
-  
-  @override
-  Widget build(BuildContext context) {
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+  final controller1 = TextEditingController();
+  final controller2 = TextEditingController();
+
+class _LoginScreenState extends State<LoginScreen> {
+  @override
+  Widget build(BuildContext context) {  
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -39,21 +46,24 @@ class LoginScreen extends StatelessWidget {
               Expanded(
                 flex: 6,
                 child: Form(
+                  onChanged: (){},
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
                           
-                        const TextFormFieldCustom(
+                        TextFormFieldCustom(
                           label: 'Correo Electrónico', 
                           hintText: 'Dirección de correo',
                           helpTextEnabled: false,
+                          controller: controller1,
                         ),
                       
                         SizedBox(height: size.height * 0.03),
                       
-                        const TextFormFieldPasswordScreen(
+                        TextFormFieldPasswordScreen(
                           helpTextEnabled: false,
                           showHelpPassword: true,
+                          controller: controller2,
                         ),                       
                       ],
                     ),
@@ -68,7 +78,12 @@ class LoginScreen extends StatelessWidget {
           
               Expanded(
                 flex: 1,
-                child: CustomButtonApp(size: size, textButton: 'Ingresar'),
+                child: CustomButtonApp(
+                  size: size, 
+                  textButton: 'Ingresar',
+                  email: controller1.value.text,
+                  password: controller2.value.text,
+                ),
               ),
               const Expanded(
                 flex: 1,

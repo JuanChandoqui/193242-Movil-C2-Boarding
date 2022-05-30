@@ -1,4 +1,4 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:mvp_all/styles/Colors/ColorsView.dart';
 
 AppBar appBarCustom(String title) {

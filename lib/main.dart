@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 
 import 'package:mvp_all/pages/home_screen.dart';
+import 'package:mvp_all/pages/menu_view.dart';
 import 'package:mvp_all/pages/progress_view.dart';
 import 'package:mvp_all/pages/reclame_password_screen.dart';
 import 'package:mvp_all/splash/splas_view.dart';
+import 'package:provider/provider.dart';
 import 'pages/login_screen.dart';
 import 'pages/register_screen.dart';
+import 'providers/checkbox_provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( 
+    MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => CheckBoxProvider())],
+      child: const MyApp())
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -24,7 +31,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
 
-      initialRoute: 'home',
+      initialRoute: 'register',
 
       routes: {
         'homeview': (context) => const HomeScreen(),
@@ -33,6 +40,7 @@ class MyApp extends StatelessWidget {
         'login':(context) => const LoginScreen(),
         'register': (context) => const RegisterScreenScreen(),
         'reclame_password':(context) => const ReclamePasswordScreen(),
+        'menuview': (context) => const MenuView()
       },
     );
   }

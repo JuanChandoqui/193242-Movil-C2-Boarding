@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:mvp_all/styles/Colors/ColorsView.dart';
-import 'package:mvp_all/widgets/bottom_button_custom.dart';
-
-import '../widgets/appbar_custom.dart';
-import '../widgets/checkbox_condition.dart';
+import 'package:mvp_all/widgets/customs-widgets/bottom_button_custom.dart';
+import '../widgets/customs-widgets/appbar_custom.dart';
+import '../widgets/register-widgets/checkbox_condition.dart';
 import '../widgets/custom_button_app.dart';
-import '../widgets/text_form_field_custom.dart';
-import '../widgets/text_form_field_password.dart';
+import '../widgets/customs-widgets/text_form_field_custom.dart';
+import '../widgets/register-widgets/text_form_field_password.dart';
 
-class RegisterScreenScreen extends StatelessWidget {
+class RegisterScreenScreen extends StatefulWidget {
    
   const RegisterScreenScreen({Key? key}) : super(key: key);
-  
+
+  @override
+  State<RegisterScreenScreen> createState() => _RegisterScreenScreenState();
+}
+
+  final controller1 = TextEditingController();
+  final controller2 = TextEditingController();
+  final controller3 = TextEditingController();
+
+class _RegisterScreenScreenState extends State<RegisterScreenScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -43,25 +51,28 @@ class RegisterScreenScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         
-                        const TextFormFieldCustom(
+                        TextFormFieldCustom(
                           label: 'Nombre', 
                           hintText: 'Nombre Completo',
                           helpTextEnabled: false,
+                          controller: controller1,
                         ),
                       
                         SizedBox(height: size.height * 0.03), 
                             
-                        const TextFormFieldCustom(
+                        TextFormFieldCustom(
                           label: 'Correo Electrónico', 
                           hintText: 'Dirección de correo',
                           helpTextEnabled: false,
+                           controller: controller2
                         ),
                       
                         SizedBox(height: size.height * 0.03),
                       
-                        const TextFormFieldPasswordScreen(
+                        TextFormFieldPasswordScreen(
                           helpTextEnabled: true,
                           showHelpPassword: false,
+                          controller: controller3,
                         ),                       
                       ],
                     ),
@@ -76,13 +87,20 @@ class RegisterScreenScreen extends StatelessWidget {
           
               Expanded(
                 flex: 1,
-                child: CustomButtonApp(size: size, textButton: 'Crear Cuenta'),
+                child: CustomButtonApp(
+                  size: size, 
+                  textButton: 'Crear Cuenta',
+                  fullname: controller1.text,
+                  email: controller2.text,
+                  password: controller3.text,
+                ),
               ),
               const Expanded(
                 flex: 1,
                 child: BottomButtonCustom(
                   text: '¿Ya tienes una cuenta? ',
                   textButton: 'Iniciar sesión',
+
                 ),
               )
             ],

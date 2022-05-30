@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:mvp_all/providers/checkbox_provider.dart';
 import 'package:mvp_all/styles/Colors/ColorsView.dart';
+import 'package:provider/provider.dart';
 
 class CheckBoxScreen extends StatefulWidget {
    
@@ -15,7 +17,7 @@ class _CheckBoxScreenState extends State<CheckBoxScreen> {
 
   @override
   Widget build(BuildContext context) {
-
+    final checkBoxProvider = Provider.of<CheckBoxProvider>(context);
     final size = MediaQuery.of(context).size;
 
     Color getColor(Set<MaterialState> states) {
@@ -40,6 +42,7 @@ class _CheckBoxScreenState extends State<CheckBoxScreen> {
           onChanged: (bool? value) {
             setState(() {
               isChecked = value!;
+              checkBoxProvider.setIsChecked(isChecked);
             });
           },
         ),

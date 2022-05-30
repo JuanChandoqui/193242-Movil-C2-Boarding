@@ -6,13 +6,15 @@ class TextFormFieldCustom extends StatelessWidget {
   final String hintText;
   final IconData? iconData;
   final bool helpTextEnabled;
+  final TextEditingController? controller;
 
   const TextFormFieldCustom({
     Key? key, 
     required this.label, 
     required this.hintText,
     required this.helpTextEnabled,
-    this.iconData
+    this.iconData, 
+    this.controller
   }) : super(key: key);
 
   @override
@@ -38,6 +40,10 @@ class TextFormFieldCustom extends StatelessWidget {
         const SizedBox(height: 5,), 
 
         TextFormField(
+          controller: controller,
+          onChanged: (text){
+            print(text);
+          },
           decoration:  InputDecoration(
             suffixIcon: 
             iconData != null ? Icon(iconData) 
@@ -49,7 +55,6 @@ class TextFormFieldCustom extends StatelessWidget {
             helperMaxLines: 4,
             helperStyle: const TextStyle(
               overflow: TextOverflow.ellipsis,
-        
             )
           ),
         )

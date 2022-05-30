@@ -3,14 +3,14 @@ import 'package:mvp_all/styles/Colors/ColorsView.dart';
 
 class ContainerBoarding extends StatelessWidget {
   final String image;
-  final String title;
-  final String description;
+  final String? title;
+  final String? description;
 
   const ContainerBoarding({
     Key? key, 
     required this.image, 
-    required this.title,
-    required this.description
+    this.title,
+    this.description
   }) : super(key: key);
 
   @override
@@ -25,7 +25,7 @@ class ContainerBoarding extends StatelessWidget {
         ),
 
         Text(
-          title, 
+          title!, 
           style: const TextStyle(
             color: ColorsViews.textBoarding,
             fontWeight: FontWeight.bold,
@@ -38,7 +38,7 @@ class ContainerBoarding extends StatelessWidget {
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 50),
           child: Text(
-            description,
+            description!,
             textAlign: TextAlign.center,
             style: const TextStyle(
               color: ColorsViews.textCenterColor
