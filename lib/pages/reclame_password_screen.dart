@@ -14,7 +14,7 @@ class ReclamePasswordScreen extends StatelessWidget {
     final controller = TextEditingController();
 
     return Scaffold(
-      appBar: appBarCustom('Recuperar contraseña'),
+      appBar: appBarCustom('Recuperar contraseña', false),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: size.width * 0.07),

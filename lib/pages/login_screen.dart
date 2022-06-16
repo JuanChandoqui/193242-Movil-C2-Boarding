@@ -24,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: appBarCustom('Iniciar Sesión'),
+      appBar: appBarCustom('Iniciar Sesión', false),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: size.width * 0.07),

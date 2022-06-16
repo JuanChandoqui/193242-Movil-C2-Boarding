@@ -25,7 +25,7 @@ class _RegisterScreenScreenState extends State<RegisterScreenScreen> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: appBarCustom('Regístrate'),
+      appBar: appBarCustom('Regístrate', false),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: size.width * 0.07),
