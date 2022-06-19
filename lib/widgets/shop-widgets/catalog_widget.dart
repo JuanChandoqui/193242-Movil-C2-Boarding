@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvp_all/models/doc_model.dart';
 import 'package:mvp_all/widgets/shop-widgets/list_services_widget.dart';
 import 'package:mvp_all/widgets/shop-widgets/textbutton_widget.dart';
 
@@ -15,6 +16,7 @@ class CatalogWidget extends StatelessWidget {
     required this.isSelectedOption1, 
     required this.isSelectedOption2, 
     required this.isSelectedOption3,
+    this.listDoc
   }) : super(key: key);
 
   final Size size;
@@ -27,6 +29,7 @@ class CatalogWidget extends StatelessWidget {
   final bool isSelectedOption1;
   final bool isSelectedOption2;
   final bool isSelectedOption3;
+  final Future<List<DocModel>>? listDoc;
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +69,11 @@ class CatalogWidget extends StatelessWidget {
 
         Padding(
           padding: const EdgeInsets.only(top: 20),
-          child: ListServicesWidget(size: size, titleColor: titleColor),
+          child: ListServicesWidget(
+            size: size, 
+            titleColor: titleColor,
+            listDoc: listDoc!,
+          ),
         ),
       ],
     );

@@ -5,6 +5,7 @@ import 'package:mvp_all/services/ad_service.dart';
 import 'package:mvp_all/widgets/customs-widgets/appbar_custom.dart';
 import 'package:mvp_all/widgets/shop-widgets/bottom_canvas_widget.dart';
 import 'package:mvp_all/widgets/shop-widgets/card_services_widget.dart';
+import 'package:mvp_all/widgets/shop-widgets/carousel_ad.dart';
 import 'package:mvp_all/widgets/shop-widgets/catalog_widget.dart';
 import 'package:mvp_all/widgets/shop-widgets/search_widget.dart';
 import 'package:provider/provider.dart';
@@ -23,6 +24,8 @@ class ShopScreen extends StatelessWidget {
     final textButtonProvider = Provider.of<TextButtonProvider>(context);
     final listItem1 = ['Calle 10 9', 'Two', 'Free', 'Four'];
     final listItem2 = ['Entrega a domicilio', 'Entrega en línea'];
+    final listProducts = getProductDocs();
+    final listPet = getPetTaxonomia();
 
     return DefaultTabController(
       initialIndex: 1,
@@ -97,31 +100,18 @@ class ShopScreen extends StatelessWidget {
                   ),
 
                   Padding(
-                    padding: const EdgeInsets.only(left: 15, right: 15, top: 30, bottom: 30),
-                    child:  FutureBuilder<dynamic>(
-                      future: getAd(),
-                      builder: (context, snapshot){
-                        if(snapshot.hasData){
-                          print('SNAPSHOT: ${snapshot.data}');
-                          return Text('${snapshot.data}');
-                        } else {
-                          print('NO HAY INFORMACIÓN');
-                          return const Text('NOT IMAGE FOUND');
-                        }
-                      },
-                      initialData: Center(child: CircularProgressIndicator()),
-                      // initialData: SizedBox(
-                      //   width:  size.width,
-                      //   height: size.height * 0.2,
-                      //   child: const Image(image: AssetImage('assets/image/anuncio.png')),
-                      // ),
-                      // child: SizedBox(
-                      //   width:  size.width,
-                      //   height: size.height * 0.2,
-                      //   child: const Image(image: AssetImage('assets/image/anuncio.png')),
-                      // ),
+                    padding: const EdgeInsets.only(left: 15, right: 15),
+                      child: Container(
+                        alignment: Alignment.center,
+                        // color: Colors.amber,
+                        width:  size.width,
+                        height: size.height * 0.3,
+                        child: CarouselAdImage(
+                          width: size.width,
+                          height: size.height,
+                        ),
+                      ),
                     ),
-                  ),
 
                   const Divider(height: 0, thickness: 1, color: ColorsViews.colorGray),
 
@@ -138,24 +128,7 @@ class ShopScreen extends StatelessWidget {
                       isSelectedOption1: textButtonProvider.getIsSelectedAlimento,
                       isSelectedOption2: textButtonProvider.getIsSelectedButtonAccesorios,
                       isSelectedOption3: textButtonProvider.getIsSelectedButtonRecompensas,
-                    ),
-                  ),
-
-                  const Divider(height: 10, thickness: 1, color: ColorsViews.colorGray),
-
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 20),
-                    child: CatalogWidget(
-                      title: 'Servicios cerca', 
-                      textButton1: 'Paseadores',
-                      textButton2: 'Restaurantes',
-                      textButton3: 'Foto estudio',
-                      backgroundColorButton: ColorsViews.textBoarding,
-                      titleColor: ColorsViews.textBoarding,
-                      size: size,
-                       isSelectedOption1: textButtonProvider.getIsSelectedButtonPaseadores,
-                      isSelectedOption2: textButtonProvider.getIsSelectedButtonRestaurantes,
-                      isSelectedOption3: textButtonProvider.getIsSelectedButtonFotoEstudio,
+                      listDoc: listProducts,
                     ),
                   ),
                 ],
@@ -195,3 +168,4 @@ class ShopScreen extends StatelessWidget {
     );
   }
 }
+

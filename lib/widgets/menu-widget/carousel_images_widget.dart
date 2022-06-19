@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mvp_all/styles/Colors/ColorsView.dart';
 
 class CarouselImagesWidget extends StatelessWidget {
   const CarouselImagesWidget({Key? key}) : super(key: key);

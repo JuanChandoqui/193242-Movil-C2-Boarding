@@ -8,8 +8,9 @@ class BottomCanvas extends CustomPainter{
   void paint(Canvas canvas, Size size) {
     Paint paint0 = Paint();
     paint0.color = ColorsViews.colorSplash;
-      paint0.style = PaintingStyle.fill;
-      paint0.strokeWidth = 1;
+    paint0.style = PaintingStyle.fill;
+    paint0.isAntiAlias = false;
+    // paint0.strokeWidth = 1;
 
                
     Path path0 = Path();
